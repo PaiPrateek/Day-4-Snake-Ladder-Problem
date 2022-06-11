@@ -18,10 +18,10 @@ namespace SnakeAndLadder
             Console.WriteLine("Player Rolls the die");
             Console.WriteLine("........................");
             Random random = new Random();
-            int die = random.Next(1,7);
-            Console.WriteLine("The die Number is : "+die);
+            int die = random.Next(1, 7);
+            Console.WriteLine("The die Number is : " + die);
             Random rndm = new Random();
-            int Option = rndm.Next(1,3);
+            int Option = rndm.Next(0, 3);
             switch (Option)
             {
                 case 0:
@@ -37,10 +37,14 @@ namespace SnakeAndLadder
                 case 2:
                     Console.WriteLine("Player Option is : Snake");
                     PlayerPosition = PlayerPosition - die;
+                    if(PlayerPosition < 0)
+                    {
+                        PlayerPosition=0;
+                    }
                     break;
             }
             CurrentPosition += PlayerPosition;
-            Console.WriteLine("Current Position of the Player is : "+CurrentPosition);
+            Console.WriteLine("Current Position of the Player is : " + CurrentPosition);
         }
     }
 }

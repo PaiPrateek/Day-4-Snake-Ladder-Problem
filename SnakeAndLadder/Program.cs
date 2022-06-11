@@ -17,34 +17,39 @@ namespace SnakeAndLadder
             Console.WriteLine("Start Position of the Player is : " + StartPosition);
             Console.WriteLine("Player Rolls the die");
             Console.WriteLine("........................");
-            Random random = new Random();
-            int die = random.Next(1, 7);
-            Console.WriteLine("The die Number is : " + die);
-            Random rndm = new Random();
-            int Option = rndm.Next(0, 3);
-            switch (Option)
+            while(CurrentPosition <= 100)
             {
-                case 0:
-                    Console.WriteLine("Player Option is : No Play");
-                    PlayerPosition = PlayerPosition;
-                    break;
+                Random random = new Random();
+                int die = random.Next(1, 7);
+                Console.WriteLine("The die Number is : " + die);
+                Random rndm = new Random();
+                int Option = rndm.Next(0, 3);
+                switch (Option)
+                {
+                    case 0:
+                        Console.WriteLine("Player Option is : No Play");
+                        PlayerPosition = PlayerPosition;
+                        break;
 
-                case 1:
-                    Console.WriteLine("Player Option is : Ladder");
-                    PlayerPosition = PlayerPosition + die;
-                    break;
+                    case 1:
+                        Console.WriteLine("Player Option is : Ladder");
+                        PlayerPosition = PlayerPosition + die;
+                        break;
 
-                case 2:
-                    Console.WriteLine("Player Option is : Snake");
-                    PlayerPosition = PlayerPosition - die;
-                    if(PlayerPosition < 0)
-                    {
-                        PlayerPosition=0;
-                    }
-                    break;
+                    case 2:
+                        Console.WriteLine("Player Option is : Snake");
+                        PlayerPosition = PlayerPosition - die;
+                        if (PlayerPosition < 0)
+                        {
+                            PlayerPosition = 0;
+                        }
+                        break;
+                }
+                CurrentPosition += PlayerPosition;
             }
-            CurrentPosition += PlayerPosition;
+            
             Console.WriteLine("Current Position of the Player is : " + CurrentPosition);
+            Console.WriteLine("Player Win the Game");
         }
     }
 }

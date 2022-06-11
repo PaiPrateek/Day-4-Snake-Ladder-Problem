@@ -46,8 +46,13 @@ namespace SnakeAndLadder
                         break;
                 }
                 CurrentPosition += PlayerPosition;
+
+                if (CurrentPosition > 100)
+                {
+                    CurrentPosition--;
+                }
             }
-            
+
             Console.WriteLine("Current Position of the Player is : " + CurrentPosition);
             Console.WriteLine("Player Win the Game");
         }

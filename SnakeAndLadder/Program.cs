@@ -19,6 +19,8 @@ namespace SnakeAndLadder
             Console.WriteLine("........................");
             while(CurrentPosition <= 100)
             {
+                Console.WriteLine("........................");
+                Console.WriteLine("Current Position of the Player is : " + CurrentPosition);
                 Random random = new Random();
                 int die = random.Next(1, 7);
                 Console.WriteLine("The die Number is : " + die);
@@ -47,8 +49,7 @@ namespace SnakeAndLadder
                 }
                 CurrentPosition += PlayerPosition;
             }
-            
-            Console.WriteLine("Current Position of the Player is : " + CurrentPosition);
+
             Console.WriteLine("Player Win the Game");
         }
     }
